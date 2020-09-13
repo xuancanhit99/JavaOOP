@@ -8,14 +8,18 @@ public class TestShape {
 
         s1.setColor("while");
         s1.setFiller(false);
+        ((Circle)s1).setRadius(7.2);
+
         System.out.println(s1);
         System.out.println("- Area: " + s1.getArea());
         System.out.println("- Perimeter: " + s1.getPerimeter());
 
+        ((Rectangle)s2).setLength(12);
         System.out.println(s2);
         System.out.println("- Area: " + s2.getArea());
         System.out.println("- Perimeter: " + s2.getPerimeter());
 
+        ((Square)s3).setWidth(6);
         System.out.println(s3);
     }
 }
