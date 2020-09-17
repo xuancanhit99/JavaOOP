@@ -93,6 +93,7 @@ public class Match extends JFrame implements ActionListener {
 
         //setSize(480, 320);
         this.pack();
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 
@@ -164,10 +165,4 @@ public class Match extends JFrame implements ActionListener {
         }
 
     }
-    public static void main(String[] args) {
-        Match mat = new Match("Match Football");
-        mat.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        mat.setLocationRelativeTo(null); // displays the window in the middle of the screen.
-    }
-
 }
