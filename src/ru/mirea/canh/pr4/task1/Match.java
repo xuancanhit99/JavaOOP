@@ -8,6 +8,7 @@ public class Match extends JFrame implements ActionListener {
     JLabel jlResult, jlLastScorer, logo_acm, logo_rm, fc;
     Label lWinner, Info, copyRight;
     JTextField jtACM, jtRM, jtLS, jtW;
+    JMenuBar menu;
 
     String LastScorer = "N/A";
     String TheWinner = "DRAW";
@@ -19,6 +20,11 @@ public class Match extends JFrame implements ActionListener {
     public Match(String nameProgram) {
         super(nameProgram);
         cont = this.getContentPane(); /*Lấy lớp ContentPane để đặt các đối tượng hiển thị*/
+
+        // Menu
+        menu = new JMenuBar();
+        menu.add(optional());
+        setJMenuBar(menu);
 
         // Header
         Info = new Label("AC Milan vs Real Madrid");
@@ -95,6 +101,16 @@ public class Match extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
     }
+
+    public JMenu optional() {
+        JMenu opt = new JMenu("Optional");
+        JMenuItem exit = new JMenuItem(new ExitAction());
+        exit.setIcon(new ImageIcon("src/images/icon_exit.png"));
+        opt.add(exit);
+        return opt;
+    }
+
+
 
     public void goalACM() {
         acm ++;
