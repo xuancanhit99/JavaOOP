@@ -1,5 +1,4 @@
 package ru.mirea.canh.pr4.task1;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -7,7 +6,7 @@ import java.awt.event.*;
 public class Match extends JFrame implements ActionListener {
     JButton jbACM, jbRM, reset, end;
     JLabel jlResult, jlLastScorer, logo_acm, logo_rm, fc;
-    Label lWinner, Info;
+    Label lWinner, Info, copyRight;
     JTextField jtACM, jtRM, jtLS, jtW;
 
     String LastScorer = "N/A";
@@ -16,7 +15,6 @@ public class Match extends JFrame implements ActionListener {
     int rm = 0;
     Container cont;
     JPanel header, body, footer;
-
 
     public Match(String nameProgram) {
         super(nameProgram);
@@ -54,7 +52,6 @@ public class Match extends JFrame implements ActionListener {
         body.add(fc);
         body.add(logo_acm);
         body.add(logo_rm);
-
         body.add(reset);
         body.add(jbACM);
         body.add(jbRM);
@@ -62,13 +59,14 @@ public class Match extends JFrame implements ActionListener {
         body.add(jtACM);
         body.add(jtRM);
 
-
         // Footer
         jlLastScorer = new JLabel("Last Scorer: ", SwingConstants.CENTER);
         jtLS = new JTextField();
         jtLS.setEditable(false);
-
-        lWinner = new Label("Winner: ");
+        lWinner = new Label("                                       Winner: ");
+        //lWinner = new Label("Winner: ", SwingConstants.CENTER);
+        copyRight = new Label("@XuanCanh-ИКБО-07-19");
+        copyRight.setForeground(Color.GRAY);
 
         jtW = new JTextField();
         jtW.setEditable(false);
@@ -76,11 +74,12 @@ public class Match extends JFrame implements ActionListener {
         jtLS.setText(LastScorer);
         jtW.setText(TheWinner);
 
-        footer = new JPanel(new GridLayout(2, 2));
+        footer = new JPanel(new GridLayout(3, 2));
         footer.add(jlLastScorer);
         footer.add(jtLS);
         footer.add(lWinner);
         footer.add(jtW);
+        footer.add(copyRight);
 
         cont.add(header, "North");
         cont.add(body, "Center");
@@ -98,13 +97,11 @@ public class Match extends JFrame implements ActionListener {
     }
 
     public void goalACM() {
-
         acm ++;
         jtACM.setText(String.valueOf(acm));
     }
 
     public void goalRM() {
-
         rm ++;
         jtRM.setText(String.valueOf(rm));
     }
@@ -118,7 +115,6 @@ public class Match extends JFrame implements ActionListener {
         jtRM.setText(String.valueOf(rm));
         jtLS.setText(LastScorer);
         jtW.setText(TheWinner);
-
         JOptionPane.showMessageDialog(null, "Reset Successful!!!", "Alert", JOptionPane.INFORMATION_MESSAGE);
     }
 
