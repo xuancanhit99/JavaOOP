@@ -25,7 +25,6 @@ public class Match extends JFrame implements ActionListener {
         menu = new JMenuBar();
         menu.add(optional());
         setJMenuBar(menu);
-
         // Header
         Info = new Label("AC Milan vs Real Madrid");
         end = new JButton("End");
