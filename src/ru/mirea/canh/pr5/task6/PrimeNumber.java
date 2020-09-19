@@ -1,16 +1,25 @@
 package ru.mirea.canh.pr5.task6;
 
+import java.util.Scanner;
+
 public class PrimeNumber {
-    public static int Prime(int n, int i) {
-        int sum_temp = 0;
-        if(i==n) return 1;
-        else
-            if(n%i==0)
-                sum_temp = 1;
-            return (sum_temp +Prime(n, i+1));
+    public static boolean isPrime(int n, int i) {
+        if(n<=2)
+            return (n==2) ? true : false;
+        if(n%i == 0)
+            return false;
+        if(i*i > n)
+            return true;
+        return isPrime(n, i+1);
     }
 
     public static void main(String[] args) {
-        System.out.println(Prime(8, 2));
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(isPrime(n,2 ))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+
     }
 }
