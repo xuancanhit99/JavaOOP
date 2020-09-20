@@ -1,5 +1,4 @@
 package ru.mirea.canh.pr5.task8;
-
 import java.util.Scanner;
 
 public class Palindrom {
