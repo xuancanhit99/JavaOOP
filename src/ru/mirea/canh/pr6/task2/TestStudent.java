@@ -1,4 +1,4 @@
-package ru.mirea.canh.pr6.task1;
+package ru.mirea.canh.pr6.task2;
 
 import java.util.Scanner;
 
