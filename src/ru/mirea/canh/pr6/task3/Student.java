@@ -1,8 +1,9 @@
-package ru.mirea.canh.pr6.task2;
+package ru.mirea.canh.pr6.task3;
+
 import java.lang.*;
 import java.util.*;
 
-public class Student implements Comparable {
+public class Student  {
     private String name;
     private int idNumber;
     private float GPA;
@@ -72,19 +73,6 @@ public class Student implements Comparable {
                 ", idNumber=" + idNumber +
                 ", GPA=" + GPA +
                 '}';
-    }
-
-
-    @Override
-    public int compareTo(Object o) {
-        Student st = (Student)o;
-        if (this.getGPA() > st.getGPA()) {
-            return 1;
-        }
-        if (this.getGPA() < st.getGPA()) {
-            return -1;
-        }
-        return 0;
     }
 
 

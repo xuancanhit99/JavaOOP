@@ -1,6 +1,6 @@
 package ru.mirea.canh.pr6.task2;
 
-import java.util.Scanner;
+import java.util.*;
 public class TestStudent {
     public static Scanner sc = new Scanner(System.in);
 
@@ -36,9 +36,11 @@ public class TestStudent {
                     }
                     break;
                 case 2:
-                    Student ste = new Student();
+                    SortingStudentsByGPA ste = new SortingStudentsByGPA();
                     ste.quickSort(stu, 0, n-1);
+                    ste.reverse(stu, 0, n-1);
                     System.out.println("Sorted students by GPA.");
+                    System.out.println();
                     break;
                 case 3:
                     System.out.printf("%-5s %15s %15s %15s \n", "ID", "Name", "GPA", "GPA(A-F)");
