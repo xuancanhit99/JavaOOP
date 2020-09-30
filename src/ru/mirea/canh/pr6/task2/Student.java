@@ -1,6 +1,8 @@
 package ru.mirea.canh.pr6.task2;
+import java.lang.*;
+import java.util.*;
 
-public class Student {
+public class Student implements Comparable {
     private String name;
     private int idNumber;
     private float GPA;
@@ -70,6 +72,57 @@ public class Student {
                 ", idNumber=" + idNumber +
                 ", GPA=" + GPA +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Object o) {
+        Student st = (Student)o;
+        if (this.getGPA() > st.getGPA()) {
+            return 1;
+        }
+        if (this.getGPA() < st.getGPA()) {
+            return -1;
+        }
+        return 0;
+    }
+
+
+    public void quickSort(Student[] a, int left, int right) {
+        if (left < right) {
+            int p = partition(a, left, right);
+            quickSort(a, left, p-1);
+            quickSort(a, p+1, right);
+        }
+    }
+
+    public int partition(Student[] a, int left, int right) {
+        Student pivot = a[right];
+        int i = left;
+        int j = right - 1;
+        while (true) {
+            while (i <= j && a[i].compareTo(pivot) < 0) {
+                i++;
+            }
+            while (j >= i && a[j].compareTo(pivot) > 0) {
+                j--;
+            }
+            if (i >= j)
+                break;
+
+
+            Student temp = a[i];
+            System.out.print(temp);
+            a[i] = a[j];
+            a[j] = temp;
+
+            i++;
+            j--;
+        }
+        Student temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+        return i;
     }
 
     public void showInfo() {

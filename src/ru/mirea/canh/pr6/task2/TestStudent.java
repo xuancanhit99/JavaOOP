@@ -1,7 +1,6 @@
 package ru.mirea.canh.pr6.task2;
 
 import java.util.Scanner;
-
 public class TestStudent {
     public static Scanner sc = new Scanner(System.in);
 
@@ -11,12 +10,8 @@ public class TestStudent {
         sc.nextLine();
         System.out.print("Enter student's name: ");
         st.setName(sc.nextLine());
-        System.out.print("Enter math scores: ");
-        st.setScoresMath(sc.nextInt());
-        System.out.print("Enter literary scores: ");
-        st.setScoresLiterary(sc.nextInt());
-        System.out.print("Enter english scores: ");
-        st.setScoresEnglish(sc.nextInt());
+        System.out.print("Enter GPA scores: ");
+        st.setGPA(sc.nextFloat());
         System.out.println("");
     }
     public static void main(String[] args) {
@@ -25,7 +20,7 @@ public class TestStudent {
         boolean flag = true;
         do {
             System.out.println("1. Input info student.");
-            System.out.println("2. Sort students by id.");
+            System.out.println("2. Sort students by GPA.");
             System.out.println("3. Export student list.");
             System.out.println("Enter another number to exit.");
             System.out.print("Please choose: ");
@@ -41,12 +36,12 @@ public class TestStudent {
                     }
                     break;
                 case 2:
-                    SortingStudentsByiDNumber sort = new SortingStudentsByiDNumber();
-                    sort.sortingStudent(stu);
-                    System.out.println("Sorted students by id.");
+                    Student ste = new Student();
+                    ste.quickSort(stu, 0, n-1);
+                    System.out.println("Sorted students by GPA.");
                     break;
                 case 3:
-                    System.out.printf("%-5s %15s %15s %15s %15s %15s \n", "ID", "Name", "MathScores", "LiteraryScores", "EnglishScores", "AverageOfSubjects");
+                    System.out.printf("%-5s %15s %15s %15s \n", "ID", "Name", "GPA", "GPA(A-F)");
                     for (int i=0; i<stu.length; i++) {
                         stu[i].showInfo();
                     }
