@@ -5,19 +5,19 @@ public class Sorting
 {
     public static void main(String[] args)
     {
-        Stack<String> animals= new Stack<>();
-        Stack<String> test = new Stack<>();
 
-        animals.push("Dog");
-        animals.push("Horse");
-        animals.push("Cat");
-
-        test.add("Hello");
-        test.add("Anh");
-        test.add("Yeu");
-
-        System.out.println("Stack: " + animals);
-        System.out.println("Stack: " + test);
+        int[] a = new int[3];
+        a[0] = 1;
+        a[1] = 2;
+        a[2] = 3;
+        int[] b = a;
+        for(int i=0; i<3; i++) {
+            System.out.print(b[i] + " ");
+        }
+        b[2] = 5;
+        for(int i=0; i<3; i++) {
+            System.out.print(a[i] + " ");
+        }
 
     }
 }

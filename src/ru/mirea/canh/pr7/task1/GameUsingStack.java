@@ -10,6 +10,7 @@ public class GameUsingStack {
             Integer val = iter.next();
             System.out.print(val + " ");
         }
+        System.out.println();
     }
     public static void gameCard(int N) { // N: number of card
         Stack<Integer> player1 = new Stack<Integer>();
@@ -20,11 +21,11 @@ public class GameUsingStack {
             player2.push(sc.nextInt());
 
         int moves = 0;
-        for(; !player1.empty() && !player2.empty() && moves <= 200000; moves++) {
+        Stack<Integer> win = null;
+        while (!player1.empty() && !player2.empty() && moves <= 200000) {
             int ac = player1.remove(0);
             int bc = player2.remove(0);
 
-            Stack<Integer> win;
             if(ac == 0 && bc == N - 1)
                 win = player1;
             else if(bc == 0 && ac == N - 1)
@@ -36,6 +37,13 @@ public class GameUsingStack {
 
             win.push(ac);
             win.push(bc);
+            //System.out.print("play1: ");
+            //printStack(player1);
+            //System.out.print("play2: ");
+            //printStack(player2);
+            //System.out.print("win: ");
+           // printStack(win);
+            moves++;
         }
         if(player1.empty())
             System.out.println("second " + moves);
