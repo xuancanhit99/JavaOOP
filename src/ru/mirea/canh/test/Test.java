@@ -1,5 +1,7 @@
 package ru.mirea.canh.test;
 
+// Example về Ngoại lệ Try catch
+
 class AgeException extends Exception {
 
     public AgeException(String message) {
