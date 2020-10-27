@@ -1,4 +1,4 @@
-package ru.mirea.canh.pr11.task1;
+package ru.mirea.canh.pr11.task1_2;
 
 public class ArrayQueueModule {
     private static int size;

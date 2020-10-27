@@ -1,4 +1,4 @@
-package ru.mirea.canh.pr11.task1;
+package ru.mirea.canh.pr11.task1_2;
 
 abstract public class AbstractQueue implements Queue {
 
