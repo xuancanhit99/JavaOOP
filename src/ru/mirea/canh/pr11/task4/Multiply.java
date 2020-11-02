@@ -17,7 +17,11 @@ public class Multiply extends ExpressionParser {
     }
 
     @Override
-    protected double evaluate(double lhs, double rhs) {
-        return lhs * rhs;
+    protected int evaluate(int f, int s) throws Exception {
+        if(s > 0 ? f > Integer.MAX_VALUE/s || f < Integer.MIN_VALUE/s :
+                (s < -1 ? f >Integer.MIN_VALUE/s || f < Integer.MAX_VALUE/s :
+                        s == -1 && f == Integer.MIN_VALUE))
+            throw new OverflowException("overflow");
+        return f * s;
     }
 }

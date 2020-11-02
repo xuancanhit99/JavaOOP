@@ -14,7 +14,7 @@ public class Variable implements TripleExpression {
         this.var = var;
     }
 
-    public double evaluate(double x, double y, double z) {
+    public int evaluate(int x, int y, int z) {
         if (var.equals("x")) {
             return x;
         } else if (var.equals("y")) {

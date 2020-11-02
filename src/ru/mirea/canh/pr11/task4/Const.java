@@ -1,14 +1,14 @@
 package ru.mirea.canh.pr11.task4;
 
 public class Const implements TripleExpression {
-    final double constant;
+    final int constant;
 
-    public Const(double constant) {
+    public Const(int constant) {
         this.constant = constant;
     }
 
     @Override
-    public double evaluate(double x, double y, double z) {
+    public int evaluate(int x, int y, int z) {
         return constant;
     }
 }

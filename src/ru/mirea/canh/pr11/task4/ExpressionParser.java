@@ -10,9 +10,9 @@ public abstract class ExpressionParser implements TripleExpression {
         this.second = second;
     }
 
-    public double evaluate(double x, double y, double z) {
+    public int evaluate(int x, int y, int z) throws Exception {
         return evaluate(first.evaluate(x, y, z), second.evaluate(x, y, z));
     }
 
-    protected abstract double evaluate(double lhs, double rhs);
+    protected abstract int evaluate(int f, int s) throws Exception;
 }

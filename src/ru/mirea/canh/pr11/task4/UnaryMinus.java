@@ -16,7 +16,7 @@ public class UnaryMinus  implements TripleExpression {
     }
 
     @Override
-    public double evaluate(double x, double y, double z) {
+    public int evaluate(int x, int y, int z) throws Exception {
         if(only instanceof Const)
             return (-1)*((Const) only).constant;
         else if(only instanceof Variable)

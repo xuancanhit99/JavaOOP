@@ -17,7 +17,9 @@ public class Subtract extends ExpressionParser {
     }
 
     @Override
-    protected double evaluate(double lhs, double rhs) {
-        return lhs - rhs;
+    protected int evaluate(int f, int s) throws Exception {
+        if(s > 0 ? f < Integer.MIN_VALUE + s : f > Integer.MAX_VALUE + s)
+            throw new OverflowException("overflow");
+        return f - s;
     }
 }

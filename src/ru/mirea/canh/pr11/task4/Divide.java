@@ -17,8 +17,15 @@ public class Divide extends ExpressionParser {
         super(first, second);
     }
 
+
+
     @Override
-    protected double evaluate(double lhs, double rhs) {
-        return lhs / rhs;
+    protected int evaluate(int f, int s) throws Exception {
+        if((f == Integer.MIN_VALUE) && (s == -1))
+            throw new OverflowException("overflow");
+        if(s == 0)
+            throw new DivideByZeroException();
+        return f/s;
     }
 }
+
