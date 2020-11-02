@@ -22,15 +22,15 @@ public class Test {
             );
             System.out.println(function.evaluate(x));
         } catch (Exception exception) {
-            System.out.print("\nНеверный ввод!\nВведите число: ");
+            System.out.print("\nInvalid input!\nEnter number: ");
             evaluate();
         }
     }
 
     public static void main(String[] args) {
-        System.out.print("Данная программа по входному числу высчитывает" +
-                "\nзначение функции [x^2 - 2*x + 1], где x - само входное значение.\n\n" +
-                "Введите значение x: ");
+        System.out.print("This program calculates the input:" +
+                "\nFunction value [x^2 - 2*x + 1], - x is the input value.\n\n" +
+                "Enter the value x: ");
         evaluate();
     }
 }
