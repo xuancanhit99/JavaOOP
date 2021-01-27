@@ -8,7 +8,6 @@ public class Test {
                 return super.add(dish);
             }
         };
-
         restaurantOrder.add(new Drink("CocaCola", "drink"));
         restaurantOrder.add(new Drink(5,"Pepsi", "drink"));
         restaurantOrder.add(new Dish("Soup", "dish"));

@@ -50,5 +50,4 @@ public class Ball {
     public void PaintBall() {
         System.out.println("The Ball: " + type + " has been painted.");
     }
-
 }
